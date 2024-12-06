@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 
-import '@/app/global.css';
+import { DesktopNavigation } from '@/app/components/navigation/DesktopNavigation';
+import '@/app/globals.css';
 import { cn } from '@/app/lib/ui/tw';
 
 const geistSans = localFont({
@@ -24,7 +25,10 @@ const bodyClass = cn(geistSans.variable, 'bg-grayscale-50 font-sans antialiased'
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
-      <body className={bodyClass}>{children}</body>
+      <body className={bodyClass}>
+        <DesktopNavigation />
+        {children}
+      </body>
     </html>
   );
 }
