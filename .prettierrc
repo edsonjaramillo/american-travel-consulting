@@ -1,0 +1,13 @@
+{
+  "plugins": ["@trivago/prettier-plugin-sort-imports", "prettier-plugin-tailwindcss"],
+  "printWidth": 100,
+  "singleQuote": true,
+  "semi": true,
+  "bracketSameLine": true,
+  "importOrder": ["^@/", "^\\."],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true,
+  "tailwindConfig": "./tailwind.config.ts",
+  "tailwindAttributes": ["cn", "tv"],
+  "tailwindFunctions": ["cn", "tv"]
+}
