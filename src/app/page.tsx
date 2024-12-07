@@ -1,3 +1,5 @@
+import { Responsive } from '@/app/components/ui/Responsive';
+
 export default function Homepage() {
   return (
     <Responsive>
