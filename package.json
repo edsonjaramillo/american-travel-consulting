@@ -14,7 +14,9 @@
     "next": "15.0.4",
     "react": "19.0.0-rc-7283a213-20241206",
     "react-dom": "19.0.0-rc-7283a213-20241206",
-    "tailwind-merge": "2.5.5"
+    "tailwind-merge": "2.5.5",
+    "tailwind-variants": "0.3.0",
+    "zustand": "^5.0.2"
   },
   "devDependencies": {
     "@trivago/prettier-plugin-sort-imports": "5.0.1",
