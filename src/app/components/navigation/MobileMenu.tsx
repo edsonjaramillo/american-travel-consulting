@@ -49,13 +49,13 @@ export function MobileMenu() {
 
 type MobileLinkProps = NavigationLink & React.ComponentProps<'a'>;
 
-function MobileLink({ href, name, ...props }: MobileLinkProps) {
+function MobileLink({ href, name, icon, ...props }: MobileLinkProps) {
   return (
     <Link
       href={href}
-      className="flex items-center gap-4 rounded p-3 font-medium text-grayscale-50 transition-colors duration-base hover:text-secondary-light"
+      className="group/mobile-link flex items-center gap-2 rounded p-3 font-medium text-grayscale-50 transition-colors duration-base hover:text-secondary"
       {...props}>
-      {name}
+      {icon} {name}
     </Link>
   );
 }
