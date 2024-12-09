@@ -8,7 +8,7 @@ import { type NavigationLink, navigationLinks } from '@/app/data/links';
 
 export function DesktopNavigation() {
   return (
-    <nav className="hidden shadow-md md:block">
+    <nav className="mb-1 hidden shadow-md md:block">
       <Responsive className="flex h-14 items-center justify-between">
         <Logo />
         <ul className="flex space-x-4">
