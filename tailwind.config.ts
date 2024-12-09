@@ -1,6 +1,6 @@
 import type { Config } from 'tailwindcss';
 
-const responsiveWidth = 65;
+const responsiveWidth = 68;
 const halfResponsiveWidth = responsiveWidth / 2;
 
 export default {
