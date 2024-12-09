@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 
 import { DesktopNavigation } from '@/app/components/navigation/DesktopNavigation';
+import { Footer } from '@/app/components/navigation/Footer';
 import { MobileNavigation } from '@/app/components/navigation/MobileNavigation';
 import '@/app/globals.css';
 import { cn } from '@/app/lib/ui/tw';
@@ -30,6 +31,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <DesktopNavigation />
         <MobileNavigation />
         {children}
+        <Footer />
       </body>
     </html>
   );
