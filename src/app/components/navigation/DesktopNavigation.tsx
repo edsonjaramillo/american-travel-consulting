@@ -8,7 +8,7 @@ import { type NavigationLink, navigationLinks } from '@/app/data/links';
 
 export function DesktopNavigation() {
   return (
-    <nav className="z-nav fixed top-0 mb-1 hidden w-full rounded-bl rounded-br bg-grayscale-50 shadow-md md:block">
+    <nav className="fixed top-0 z-nav mb-1 hidden w-full rounded-bl rounded-br bg-grayscale-50 shadow-md md:block">
       <Responsive className="flex h-14 items-center justify-between">
         <Logo />
         <ul className="flex space-x-4">
