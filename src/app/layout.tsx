@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 
-import { DesktopNavigation } from '@/app/components/navigation/DesktopNavigation';
+import { DesktopNavigation, NavigationSpacer } from '@/app/components/navigation/DesktopNavigation';
 import { Footer } from '@/app/components/navigation/Footer';
 import { MobileNavigation } from '@/app/components/navigation/MobileNavigation';
 import '@/app/globals.css';
@@ -22,7 +22,10 @@ type RootLayoutProps = {
   children: React.ReactNode;
 };
 
-const bodyClass = cn(geistSans.variable, 'bg-grayscale-50 font-sans antialiased');
+const bodyClass = cn(
+  geistSans.variable,
+  'relative bg-grayscale-50 font-sans antialiased selection:bg-secondary selection:text-grayscale-inverse',
+);
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
@@ -30,6 +33,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <body className={bodyClass}>
         <DesktopNavigation />
         <MobileNavigation />
+        <NavigationSpacer />
         {children}
         <Footer />
       </body>

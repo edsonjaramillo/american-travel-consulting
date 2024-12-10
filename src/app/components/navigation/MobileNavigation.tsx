@@ -8,7 +8,9 @@ import { useMobileMenu } from '@/app/context/MobileMenuContext';
 
 export function MobileNavigation() {
   return (
-    <nav aria-label="Mobile" className="mb-1 flex h-14 w-full shadow-md md:hidden">
+    <nav
+      aria-label="Mobile"
+      className="z-nav fixed top-0 mb-1 flex h-14 w-full rounded-bl rounded-br bg-grayscale-50 shadow-md md:hidden">
       <Responsive className="flex items-center justify-between">
         <Hamburger />
         <Logo />

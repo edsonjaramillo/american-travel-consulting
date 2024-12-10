@@ -83,6 +83,7 @@ export default {
       zIndex: {
         modal: '4',
         blur: '3',
+        nav: '2',
       },
       width: {
         responsive: `min(90%,${responsiveWidth}rem)`,
