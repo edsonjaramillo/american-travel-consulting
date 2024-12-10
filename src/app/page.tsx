@@ -2,9 +2,12 @@ import { FeaturedDestination } from '@/app/components/home/FeaturedDestination';
 import { Testimonial } from '@/app/components/home/Testimonial';
 import { Section } from '@/app/components/ui/Section';
 
+import { CTA } from './components/home/CTA';
+
 export default function Homepage() {
   return (
     <>
+      <CTA />
       <Section id="destinations" headerAs="h2" headerText="Featured Destinations">
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
           {Array.from({ length: 6 }).map((_, i) => (
