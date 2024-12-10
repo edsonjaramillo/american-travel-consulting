@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import localFont from 'next/font/local';
+import { Inter } from 'next/font/google';
 
 import { DesktopNavigation, NavigationSpacer } from '@/app/components/navigation/DesktopNavigation';
 import { Footer } from '@/app/components/navigation/Footer';
@@ -7,10 +7,11 @@ import { MobileNavigation } from '@/app/components/navigation/MobileNavigation';
 import '@/app/globals.css';
 import { cn } from '@/app/lib/ui/tw';
 
-const geistSans = localFont({
-  src: './fonts/GeistVF.woff',
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  display: 'swap',
   variable: '--font-next',
-  weight: '400 500',
 });
 
 export const metadata: Metadata = {
@@ -23,7 +24,7 @@ type RootLayoutProps = {
 };
 
 const bodyClass = cn(
-  geistSans.variable,
+  inter.variable,
   'relative bg-grayscale-50 font-sans antialiased selection:bg-secondary selection:text-grayscale-inverse',
 );
 
