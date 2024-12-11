@@ -1,9 +1,11 @@
-import { Responsive } from '@/app/components/ui/Responsive';
+import { RegisterForm } from '@/app/components/forms/RegisterForm';
+import { SplitShell } from '@/app/components/ui/SplitShell';
 
-export default function RegisterPage() {
+export default function ContactPage() {
   return (
-    <Responsive>
-      <h1>Register Page</h1>
-    </Responsive>
+    <SplitShell
+      image={{ src: 'https://picsum.photos/id/237/400/800', alt: '' }}
+      form={<RegisterForm />}
+    />
   );
 }

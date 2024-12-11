@@ -1,9 +1,11 @@
-import { Responsive } from '@/app/components/ui/Responsive';
+import { ContactForm } from '@/app/components/forms/ContactForm';
+import { SplitShell } from '@/app/components/ui/SplitShell';
 
 export default function ContactPage() {
   return (
-    <Responsive>
-      <h1>Contact Page</h1>
-    </Responsive>
+    <SplitShell
+      image={{ src: 'https://picsum.photos/id/237/400/800', alt: '' }}
+      form={<ContactForm />}
+    />
   );
 }
