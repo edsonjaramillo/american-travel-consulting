@@ -26,6 +26,14 @@ class CMSClient {
     const { destinations } = await this.gql.request<Res<Destination[]>>(Query.getDestinations());
     return destinations;
   }
+
+  async getFeaturedestinations() {
+    const { destinations } = await this.gql.request<Res<Destination[]>>(
+      Query.getFeaturedestinations(),
+      { cache: 'force-cache' },
+    );
+    return destinations;
+  }
 }
 
 export const cms = new CMSClient();

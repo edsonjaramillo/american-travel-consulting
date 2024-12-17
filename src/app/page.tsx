@@ -1,22 +1,21 @@
+import { cms } from '@/app/cms/clients/CMSClient';
+import { CTA } from '@/app/components/home/CTA';
 import { FeaturedDestination } from '@/app/components/home/FeaturedDestination';
 import { Testimonial } from '@/app/components/home/Testimonial';
 import { Section } from '@/app/components/ui/Section';
 
-import { CTA } from './components/home/CTA';
+// 1 week in seconds
+export const revalidate = 604800;
 
-export default function Homepage() {
+export default async function Homepage() {
+  const destinations = await cms.getFeaturedestinations();
   return (
     <>
       <CTA />
       <Section id="destinations" headerAs="h2" headerText="Featured Destinations">
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-          {Array.from({ length: 6 }).map((_, i) => (
-            <FeaturedDestination
-              key={i}
-              href="/destinations/orlando"
-              imageSrc="https://picsum.photos/id/237/400/800"
-              location="Orlando, Florida"
-            />
+        <div className="grid grid-cols-featured-destinations gap-6">
+          {destinations.map((destination) => (
+            <FeaturedDestination key={destination.id} destination={destination} />
           ))}
         </div>
       </Section>

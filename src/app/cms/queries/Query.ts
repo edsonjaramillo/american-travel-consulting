@@ -18,4 +18,21 @@ export class Query {
       }
     `;
   }
+
+  static getFeaturedestinations() {
+    return gql`
+      query getFeaturedDestinations {
+        destinations(where: { featured: true }, orderBy: featuredsort_ASC) {
+          id
+          name
+          slug
+          main {
+            id
+            url
+          }
+          mainalt
+        }
+      }
+    `;
+  }
 }

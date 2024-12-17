@@ -91,7 +91,10 @@ export default {
         'split-form': 'min(90%,27rem)',
       },
       blur: { '4xl': '84px' },
+      gridTemplateColumns: {
+        'featured-destinations': 'repeat(auto-fill,minmax(23rem,1fr))',
+      },
     },
+    plugins: [],
   },
-  plugins: [],
 } satisfies Config;
