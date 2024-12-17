@@ -25,6 +25,15 @@ export class Query {
             longitude
           }
           zoomlevel
+          mapitems(orderBy: name_ASC) {
+            id
+            name
+            coordinate {
+              latitude
+              longitude
+            }
+            link
+          }
         }
       }
     `;

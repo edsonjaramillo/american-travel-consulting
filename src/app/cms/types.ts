@@ -11,6 +11,7 @@ export type Destination = {
   featuredSort: number;
   viewport: Coordinates;
   zoomLevel: number;
+  mapitems: MapItem[];
 };
 
 export type MapItem = {

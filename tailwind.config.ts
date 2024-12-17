@@ -95,6 +95,7 @@ export default {
         destinations: 'repeat(auto-fill,minmax(17rem,1fr))',
         'featured-destinations': 'repeat(auto-fill,minmax(23rem,1fr))',
         'featured-testimonials': 'repeat(auto-fill,minmax(23rem,1fr))',
+        attractions: 'repeat(auto-fill,minmax(15rem,1fr))',
       },
     },
     plugins: [],

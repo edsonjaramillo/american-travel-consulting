@@ -27,7 +27,7 @@ type GalleryImagProps = {
 function GalleryImage({ image }: GalleryImagProps) {
   return (
     <div className="relative h-64 overflow-hidden rounded">
-      <Image src={image.url} layout="fill" className="object-cover" alt="" />
+      <Image src={image.url} className="object-cover" alt="" fill />
     </div>
   );
 }
