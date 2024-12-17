@@ -12,6 +12,7 @@
   "dependencies": {
     "@hookform/resolvers": "3.9.1",
     "clsx": "2.1.1",
+    "graphql-request": "7.1.2",
     "next": "15.1.0",
     "react": "19.0.0",
     "react-dom": "19.0.0",
