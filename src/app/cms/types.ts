@@ -4,6 +4,9 @@ export type Destination = {
   description: string;
   slug: string;
   main: CMSImage;
+  secondimage: CMSImage;
+  thirdimage: CMSImage;
+  fourthimage: CMSImage;
   featured: boolean;
   featuredSort: number;
   viewport: Coordinates;
@@ -38,7 +41,7 @@ export type Testimonial = {
   order: number;
 };
 
-type CMSImage = {
+export type CMSImage = {
   id: string;
   url: string;
   width: number;

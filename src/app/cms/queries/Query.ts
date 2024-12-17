@@ -1,6 +1,35 @@
 import { gql } from 'graphql-request';
 
 export class Query {
+  static getDestination() {
+    return gql`
+      query getDestination($slug: String!) {
+        destination(where: { slug: $slug }) {
+          id
+          name
+          description
+          main {
+            url
+          }
+          secondimage {
+            url
+          }
+          thirdimage {
+            url
+          }
+          fourthimage {
+            url
+          }
+          viewport {
+            latitude
+            longitude
+          }
+          zoomlevel
+        }
+      }
+    `;
+  }
+
   static getDestinations() {
     return gql`
       query getDestinations {

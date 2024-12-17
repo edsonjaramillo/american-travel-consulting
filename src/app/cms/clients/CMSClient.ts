@@ -22,6 +22,13 @@ class CMSClient {
   //     return callToAction;
   //   }
 
+  async getDestination(slug: string) {
+    const { destination } = await this.gql.request<Res<Destination>>(Query.getDestination(), {
+      variables: { slug },
+    });
+    return destination;
+  }
+
   async getDestinations() {
     const { destinations } = await this.gql.request<Res<Destination[]>>(Query.getDestinations());
     return destinations;
