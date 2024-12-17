@@ -9,6 +9,7 @@ export const revalidate = 604800;
 
 export default async function Homepage() {
   const destinations = await cms.getFeaturedestinations();
+  const testimonials = await cms.getTestimonials();
   return (
     <>
       <CTA />
@@ -20,14 +21,9 @@ export default async function Homepage() {
         </div>
       </Section>
       <Section id="testimonials" headerAs="h2" headerText="Testimonials">
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-          {Array.from({ length: 4 }).map((_, i) => (
-            <Testimonial
-              text="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates ex sapiente eius. Nulla perferendis illum aut error nihil eligendi, maiores voluptate officiis, fuga distinctio ad architecto dolorum harum reprehenderit, cupiditate commodi magnam atque rerum accusamus enim reiciendis nemo exercitationem? Non."
-              author="John Doe"
-              organization="Orlando High School"
-              key={i}
-            />
+        <div className="grid grid-cols-featured-testimonials gap-6">
+          {testimonials.map((testimonial) => (
+            <Testimonial key={testimonial.id} testimonial={testimonial} />
           ))}
         </div>
       </Section>

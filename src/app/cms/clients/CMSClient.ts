@@ -1,7 +1,7 @@
-import type { Destination } from '@/app/cms/types';
+import type { Destination, Testimonial } from '@/app/cms/types';
 
-import { Query } from '../queries/Query';
-import { GQLRequest, gqlClient } from './GQLRequest';
+import { GQLRequest, gqlClient } from '@/app/cms/clients/GQLRequest';
+import { Query } from '@/app/cms/queries/Query';
 
 // create a generic that allows me to destructure the response based on the type
 type Res<T> = {
@@ -33,6 +33,11 @@ class CMSClient {
       { cache: 'force-cache' },
     );
     return destinations;
+  }
+
+  async getTestimonials() {
+    const { testimonials } = await this.gql.request<Res<Testimonial[]>>(Query.getTestimonials());
+    return testimonials;
   }
 }
 

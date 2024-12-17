@@ -30,6 +30,7 @@ export type Employee = {
 };
 
 export type Testimonial = {
+  id: string;
   name: string;
   quote: string;
   organization: string;

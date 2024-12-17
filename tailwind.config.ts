@@ -93,6 +93,7 @@ export default {
       blur: { '4xl': '84px' },
       gridTemplateColumns: {
         'featured-destinations': 'repeat(auto-fill,minmax(23rem,1fr))',
+        'featured-testimonials': 'repeat(auto-fill,minmax(23rem,1fr))',
       },
     },
     plugins: [],

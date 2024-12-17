@@ -35,4 +35,17 @@ export class Query {
       }
     `;
   }
+
+  static getTestimonials() {
+    return gql`
+      query getTestimonials {
+        testimonials(orderBy: order_ASC) {
+          id
+          quote
+          name
+          organization
+        }
+      }
+    `;
+  }
 }
