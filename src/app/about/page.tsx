@@ -41,13 +41,13 @@ function AboutUs() {
           In 2020, following significant growth, Lindley moved the company to Alabama and took
           primary control. When Goss passed away in June of 2023, ATC embarked on a rebrand that
           honors Stacy Goss&apos;s legacy and continues to offer unparalleled travel solutions for
-          students, educators, and adult groups. This rebrand centers on the company's core values,
-          reflected in their new logo and the slogan “Always Travel Confidently”—a promise to their
-          clients that with ATC, every detail is meticulously handled so they can focus on enjoying
-          their journey. Whether helping a school ensemble navigate their first major performance
-          trip or arranging seamless experiences for seasoned travelers, ATC ensures every client
-          has the confidence to explore new places, broaden their horizons, and embrace the
-          excitement of travel.
+          students, educators, and adult groups. This rebrand centers on the company&apos;s core
+          values, reflected in their new logo and the slogan “Always Travel Confidently”—a promise
+          to their clients that with ATC, every detail is meticulously handled so they can focus on
+          enjoying their journey. Whether helping a school ensemble navigate their first major
+          performance trip or arranging seamless experiences for seasoned travelers, ATC ensures
+          every client has the confidence to explore new places, broaden their horizons, and embrace
+          the excitement of travel.
         </Text>
       </div>
     </Section>

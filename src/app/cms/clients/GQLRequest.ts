@@ -1,6 +1,6 @@
 type GQLOptions = {
   cache?: RequestCache;
-  variables?: any;
+  variables?: Record<string, unknown>;
 };
 
 export class GQLRequest {

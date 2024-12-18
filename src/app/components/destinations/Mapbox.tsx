@@ -53,7 +53,7 @@ export function Mapbox({ initial, zoomLevel, mapItems }: MapboxProps) {
         <Icon />
       </Marker>
     ));
-  }, [mapItems]);
+  }, [mapItems, setPopup]);
 
   return (
     <ReactMapGL

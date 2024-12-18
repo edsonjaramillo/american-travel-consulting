@@ -2,7 +2,7 @@
 
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useRouter } from 'next/navigation';
-import { type FieldErrors, FormProvider, useForm } from 'react-hook-form';
+import { FormProvider, useForm } from 'react-hook-form';
 import { toast } from 'sonner';
 import { type z } from 'zod';
 
@@ -16,7 +16,8 @@ import { zRegisterFormSchema } from '@/app/validation/register.validation';
 const toastId = 'register-form-toast';
 type FormSchema = z.infer<typeof zRegisterFormSchema>;
 
-function onInvalid(errors: FieldErrors<FormSchema>) {
+function onInvalid() {
+  // function onInvalid(_?: FieldErrors<FormSchema>) {
   toast.error('Please fix the errors in the form.', { id: toastId });
 }
 

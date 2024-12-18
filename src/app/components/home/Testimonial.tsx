@@ -11,7 +11,7 @@ export function Testimonial({ testimonial }: TestimonialProps) {
       <Text
         as="span"
         className="absolute left-0 top-20 select-none text-[10rem] italic leading-3 text-secondary opacity-20">
-        "
+        &quot;
       </Text>
       <Text as="p">{testimonial.quote}</Text>
       <div className="mt-auto flex flex-col text-pretty text-center">

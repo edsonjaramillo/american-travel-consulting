@@ -168,7 +168,6 @@ type FileProperties = React.ComponentProps<'input'> & {
 export function File({
   field,
   helpMessage,
-  className,
   disabled,
   registerOptions,
   required,
@@ -176,7 +175,6 @@ export function File({
 }: FileProperties) {
   const { register, formState } = useFormContext();
   const error = formState.errors[field];
-
   return (
     <>
       <input

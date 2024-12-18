@@ -1,7 +1,7 @@
 'use client';
 
 import { zodResolver } from '@hookform/resolvers/zod';
-import { type FieldErrors, FormProvider, useForm } from 'react-hook-form';
+import { FormProvider, useForm } from 'react-hook-form';
 import { toast } from 'sonner';
 import { type z } from 'zod';
 
@@ -15,12 +15,14 @@ import { zContactFormSchema } from '@/app/validation/contact.validation';
 const toastId = 'contact-form-toast';
 type FormSchema = z.infer<typeof zContactFormSchema>;
 
-async function onSubmit(_: FormSchema) {
+async function onSubmit() {
+  // async function onSubmit(_: FormSchema) {
   toast.info('Sending message...', { id: toastId });
   toast.success('Message sent!', { id: toastId });
 }
 
-function onInvalid(errors: FieldErrors<FormSchema>) {
+// function onInvalid(errors: FieldErrors<FormSchema>) {
+function onInvalid() {
   toast.error('Please fix the errors in the form.', { id: toastId });
 }
 
