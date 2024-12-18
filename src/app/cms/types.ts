@@ -10,15 +10,15 @@ export type Destination = {
   featured: boolean;
   featuredSort: number;
   viewport: Coordinates;
-  zoomLevel: number;
+  zoomlevel: number;
   mapitems: MapItem[];
 };
 
 export type MapItem = {
   id: string;
   name: string;
-  coordinates: Coordinates;
-  link: string;
+  coordinate: Coordinates;
+  link?: string;
 };
 
 export type Coordinates = {

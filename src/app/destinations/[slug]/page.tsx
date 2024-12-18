@@ -1,5 +1,6 @@
 import { cms } from '@/app/cms/clients/CMSClient';
 import { Gallery } from '@/app/components/destinations/Gallery';
+import { InteractiveMap } from '@/app/components/destinations/InteractiveMap';
 import { PopularAttractions } from '@/app/components/destinations/PopularDestinations';
 import { Responsive } from '@/app/components/ui/Responsive';
 import { Text } from '@/app/components/ui/Text';
@@ -20,7 +21,7 @@ export default async function DestinationPage({ params }: PageProps) {
     <>
       <Responsive>
         <div className="flex flex-col gap-4">
-          <Text as="h1" size="4xl" className="font-semibold">
+          <Text as="h1" size="4xl" className="pt-2 font-semibold">
             {destination.name}
           </Text>
           <Text as="p" color="neutral">
@@ -35,9 +36,11 @@ export default async function DestinationPage({ params }: PageProps) {
         </div>
       </Responsive>
       <PopularAttractions mapItems={destination.mapitems} />
-      <Responsive>
-        <pre>{JSON.stringify(destination, null, 2)}</pre>
-      </Responsive>
+      <InteractiveMap
+        zoomLevel={destination.zoomlevel}
+        viewport={destination.viewport}
+        mapItems={destination.mapitems}
+      />
     </>
   );
 }
