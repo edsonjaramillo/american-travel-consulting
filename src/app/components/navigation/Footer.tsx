@@ -5,7 +5,7 @@ import { Text } from '@/app/components/ui/Text';
 
 export function Footer() {
   return (
-    <footer className="bg-tertiary py-8">
+    <footer className="bg-secondary py-6">
       <Responsive>
         <div className="flex flex-col-reverse items-center justify-between gap-4 md:flex-row md:gap-0">
           <SocialLinks />
