@@ -4,7 +4,7 @@ import { cn } from '@/app/lib/ui/tw';
 
 type SplitShellProps = React.ComponentProps<'div'> & {
   form: React.ReactNode;
-  image: Omit<ImageProps, 'fill' | 'alt'>;
+  image: ImageProps;
 };
 
 export function SplitShell({ image, form, children, className, ...props }: SplitShellProps) {
@@ -23,7 +23,6 @@ export function SplitShell({ image, form, children, className, ...props }: Split
         <Image
           className={cn('h-full w-full object-cover', imgClassNames)}
           fill
-          alt="df"
           {...imgProperties}
         />
         {children}
