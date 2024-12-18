@@ -1,3 +1,4 @@
+import 'mapbox-gl/dist/mapbox-gl.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 
@@ -26,7 +27,7 @@ type RootLayoutProps = {
 
 const bodyClass = cn(
   inter.variable,
-  'relative bg-grayscale-50 font-sans antialiased selection:bg-secondary selection:text-grayscale-inverse',
+  'relative scroll-smooth bg-grayscale-50 font-sans antialiased selection:bg-secondary selection:text-grayscale-inverse',
 );
 
 export default function RootLayout({ children }: RootLayoutProps) {
