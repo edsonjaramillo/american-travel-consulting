@@ -3,6 +3,15 @@ import { Text } from '@/app/components/ui/Text';
 
 export default function AboutPage() {
   return (
+    <>
+      <AboutUs />
+      <MeetTheTeam />
+    </>
+  );
+}
+
+function AboutUs() {
+  return (
     <Section id="about-us" headerAs="h1" headerText="About Us">
       <div className="mx-auto flex max-w-[70ch] flex-col justify-center">
         <Text as="p" color="neutral" className="text-pretty indent-12">
@@ -42,5 +51,13 @@ export default function AboutPage() {
         </Text>
       </div>
     </Section>
+  );
+}
+
+function MeetTheTeam() {
+  return (
+    <>
+      <Section id="meet-the-team" headerAs="h2" headerText="Meet the Team"></Section>
+    </>
   );
 }
