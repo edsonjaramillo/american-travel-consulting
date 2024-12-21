@@ -22,8 +22,8 @@ export function DesktopNavigation() {
   );
 }
 
-type DesktopLinksProperties = { link: NavigationLink };
-function DesktopLink({ link }: DesktopLinksProperties) {
+type DesktopLinksProps = { link: NavigationLink };
+function DesktopLink({ link }: DesktopLinksProps) {
   return (
     <li>
       <Link

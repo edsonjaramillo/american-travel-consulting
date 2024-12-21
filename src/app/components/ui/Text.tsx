@@ -31,7 +31,7 @@ export const textVariants = tv({
 
 type TextCore = React.ComponentProps<'div'>;
 type TextVariants = VariantProps<typeof textVariants>;
-export type TextProperties = TextCore & TextVariants & { as: As };
+export type TextProps = TextCore & TextVariants & { as: As };
 
 export const labelCls = cn(textVariants({ size: 'small' }), 'block font-medium');
 
@@ -42,13 +42,13 @@ export function Text({
   underline,
   size,
   color,
-  ...properties
-}: TextProperties) {
+  ...props
+}: TextProps) {
   const classes = cn(textVariants({ color, underline, size }), className);
   switch (as) {
     case 'h1': {
       return (
-        <h1 className={classes} {...properties}>
+        <h1 className={classes} {...props}>
           {children}
         </h1>
       );
@@ -56,7 +56,7 @@ export function Text({
 
     case 'h2': {
       return (
-        <h2 className={classes} {...properties}>
+        <h2 className={classes} {...props}>
           {children}
         </h2>
       );
@@ -64,7 +64,7 @@ export function Text({
 
     case 'h3': {
       return (
-        <h3 className={classes} {...properties}>
+        <h3 className={classes} {...props}>
           {children}
         </h3>
       );
@@ -72,7 +72,7 @@ export function Text({
 
     case 'h4': {
       return (
-        <h4 className={classes} {...properties}>
+        <h4 className={classes} {...props}>
           {children}
         </h4>
       );
@@ -80,7 +80,7 @@ export function Text({
 
     case 'h5': {
       return (
-        <h5 className={classes} {...properties}>
+        <h5 className={classes} {...props}>
           {children}
         </h5>
       );
@@ -88,7 +88,7 @@ export function Text({
 
     case 'h6': {
       return (
-        <h6 className={classes} {...properties}>
+        <h6 className={classes} {...props}>
           {children}
         </h6>
       );
@@ -96,7 +96,7 @@ export function Text({
 
     case 'p': {
       return (
-        <p className={classes} {...properties}>
+        <p className={classes} {...props}>
           {children}
         </p>
       );
@@ -104,7 +104,7 @@ export function Text({
 
     case 'span': {
       return (
-        <span className={classes} {...properties}>
+        <span className={classes} {...props}>
           {children}
         </span>
       );

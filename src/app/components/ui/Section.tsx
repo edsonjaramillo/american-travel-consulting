@@ -26,11 +26,11 @@ export function Section({
   children,
   className,
   id,
-  ...properties
+  ...props
 }: SectionProps) {
   const sectionClass = cn(sectionVariants({ background }), className);
   return (
-    <section id={id} className={sectionClass} {...properties}>
+    <section id={id} className={sectionClass} {...props}>
       <Responsive>
         <div className="space-y-3 text-balance pb-12 text-center">
           <Text as={headerAs} size="4xl" className="font-bold">

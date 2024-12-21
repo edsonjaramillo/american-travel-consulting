@@ -2,19 +2,18 @@
 
 import { useFormContext } from 'react-hook-form';
 
+import { labelCls } from '@/app/components/ui/Text';
 import { cn } from '@/app/lib/ui/tw';
 
-import { labelCls } from './Text';
-
-type LabelProperties = React.ComponentProps<'label'> & { field: string };
-export function Label({ className, children, field, ...properties }: LabelProperties) {
+type LabelProps = React.ComponentProps<'label'> & { field: string };
+export function Label({ className, children, field, ...props }: LabelProps) {
   const { formState } = useFormContext();
   return (
     <label
       id={`${field}-label`}
       htmlFor={`${field}-input`}
       className={cn(labelCls, formState.errors[field] && 'text-error', className)}
-      {...properties}>
+      {...props}>
       {children}
     </label>
   );

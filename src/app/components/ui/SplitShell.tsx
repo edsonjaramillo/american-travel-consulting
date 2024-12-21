@@ -8,7 +8,7 @@ type SplitShellProps = React.ComponentProps<'div'> & {
 };
 
 export function SplitShell({ image, form, children, className, ...props }: SplitShellProps) {
-  const { className: imgClassNames, ...imgProperties } = image;
+  const { className: imgClassNames, ...imgProps } = image;
 
   return (
     <div className="flex flex-col-reverse md:grid md:grid-cols-2" {...props}>
@@ -23,7 +23,7 @@ export function SplitShell({ image, form, children, className, ...props }: Split
         <Image
           className={cn('h-full w-full object-cover', imgClassNames)}
           fill
-          {...imgProperties}
+          {...imgProps}
         />
         {children}
       </div>

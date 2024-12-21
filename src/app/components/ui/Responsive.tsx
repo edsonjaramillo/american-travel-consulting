@@ -1,9 +1,9 @@
 import { cn } from '@/app/lib/ui/tw';
 
-type ResponsiveProperties = React.ComponentProps<'div'>;
-export function Responsive({ children, className, ...properties }: ResponsiveProperties) {
+type ResponsiveProps = React.ComponentProps<'div'>;
+export function Responsive({ children, className, ...props }: ResponsiveProps) {
   return (
-    <div className={cn('mx-auto w-responsive', className)} {...properties}>
+    <div className={cn('mx-auto w-responsive', className)} {...props}>
       {children}
     </div>
   );

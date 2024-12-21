@@ -18,7 +18,7 @@ export const coreVariants = tv({
 
 export const inputVariants = tv({ extend: coreVariants, base: 'h-9' });
 
-type InputProperties = React.ComponentProps<'input'> & {
+type InputProps = React.ComponentProps<'input'> & {
   field: string;
   type: React.ComponentProps<'input'>['type'];
   helpMessage?: string;
@@ -32,8 +32,8 @@ export function Input({
   disabled,
   registerOptions,
   required,
-  ...properties
-}: InputProperties) {
+  ...props
+}: InputProps) {
   const { register, formState } = useFormContext();
   const error = formState.errors[field];
   const cls = cn(inputVariants({ disabled }), className);
@@ -48,7 +48,7 @@ export function Input({
         aria-labelledby={`${field}-label`}
         disabled={disabled}
         {...register(field, { required, ...registerOptions })}
-        {...properties}
+        {...props}
       />
       {helpMessage && <InputHelp field={field}>{helpMessage}</InputHelp>}
       {error && <InputError field={field} error={error} />}
@@ -61,7 +61,7 @@ export const textareaVariants = tv({
   base: 'resize-y',
 });
 
-type TextareaProperties = React.ComponentProps<'textarea'> & {
+type TextareaProps = React.ComponentProps<'textarea'> & {
   field: string;
   helpMessage?: string;
   registerOptions?: RegisterOptions;
@@ -74,8 +74,8 @@ export function Textarea({
   disabled,
   registerOptions,
   required,
-  ...properties
-}: TextareaProperties) {
+  ...props
+}: TextareaProps) {
   const { register, formState } = useFormContext();
   const error = formState.errors[field];
   const cls = cn(textareaVariants({ disabled }), className);
@@ -91,7 +91,7 @@ export function Textarea({
         disabled={disabled}
         rows={10}
         {...register(field, { required, ...registerOptions })}
-        {...properties}
+        {...props}
       />
       {helpMessage && <InputHelp field={field}>{helpMessage}</InputHelp>}
       {error && <InputError field={field} error={error} />}
@@ -102,10 +102,10 @@ export function Textarea({
 // Extra components
 
 // InputGroup
-type InputGroupProperties = React.ComponentProps<'div'>;
-export function InputGroup({ children, className, ...properties }: InputGroupProperties) {
+type InputGroupProps = React.ComponentProps<'div'>;
+export function InputGroup({ children, className, ...props }: InputGroupProps) {
   return (
-    <div className={cn('space-y-2', className)} {...properties}>
+    <div className={cn('space-y-2', className)} {...props}>
       {children}
     </div>
   );
@@ -119,23 +119,23 @@ export const formColumnsVariants = tv({
 
 type InputColumnsCore = React.ComponentProps<'div'>;
 type InputColumnsVariants = VariantProps<typeof formColumnsVariants>;
-type InputColumnsProperties = InputColumnsCore & InputColumnsVariants;
+type InputColumnsProps = InputColumnsCore & InputColumnsVariants;
 export function InputColumns({
   children,
   className,
   columns,
-  ...properties
-}: InputColumnsProperties) {
+  ...props
+}: InputColumnsProps) {
   return (
-    <div className={cn(formColumnsVariants({ columns }), className)} {...properties}>
+    <div className={cn(formColumnsVariants({ columns }), className)} {...props}>
       {children}
     </div>
   );
 }
 
 // Input Help
-type InputHelpProperties = React.ComponentProps<'p'> & { field: string };
-function InputHelp({ children, field }: InputHelpProperties) {
+type InputHelpProps = React.ComponentProps<'p'> & { field: string };
+function InputHelp({ children, field }: InputHelpProps) {
   return (
     <Text as="p" size="small" color="neutral" id={`${field}-help`}>
       {children}
@@ -145,8 +145,8 @@ function InputHelp({ children, field }: InputHelpProperties) {
 
 type CustomFieldError = Merge<FieldError, { message: string }>;
 // Input Error
-type InputErrorProperties = React.ComponentProps<'p'> & { field: string; error: CustomFieldError };
-function InputError({ className, error, field }: InputErrorProperties) {
+type InputErrorProps = React.ComponentProps<'p'> & { field: string; error: CustomFieldError };
+function InputError({ className, error, field }: InputErrorProps) {
   return (
     <Text
       as="p"
@@ -159,7 +159,7 @@ function InputError({ className, error, field }: InputErrorProperties) {
   );
 }
 
-type FileProperties = React.ComponentProps<'input'> & {
+type FileProps = React.ComponentProps<'input'> & {
   field: string;
   helpMessage?: string;
   registerOptions?: RegisterOptions;
@@ -171,8 +171,8 @@ export function File({
   disabled,
   registerOptions,
   required,
-  ...properties
-}: FileProperties) {
+  ...props
+}: FileProps) {
   const { register, formState } = useFormContext();
   const error = formState.errors[field];
   return (
@@ -186,19 +186,19 @@ export function File({
         disabled={disabled}
         type="file"
         {...register(field, { required, ...registerOptions })}
-        {...properties}
+        {...props}
       />
       {helpMessage && <InputHelp field={field}>{helpMessage}</InputHelp>}
     </>
   );
 }
 
-type RadioProperties = React.ComponentProps<'input'> & {
+type RadioProps = React.ComponentProps<'input'> & {
   field: string;
   value: string;
 };
 
-export function Radio({ field, value, children, ...properties }: RadioProperties) {
+export function Radio({ field, value, children, ...props }: RadioProps) {
   const { register } = useFormContext();
   const id = `${field}-${value}`;
   return (
@@ -209,7 +209,7 @@ export function Radio({ field, value, children, ...properties }: RadioProperties
         value={value}
         className="mr-2"
         {...register(field)}
-        {...properties}
+        {...props}
       />
       {children}
     </Label>
