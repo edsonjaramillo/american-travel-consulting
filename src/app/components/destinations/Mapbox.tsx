@@ -11,12 +11,13 @@ import { useMapbox } from '@/app/context/MapboxContext';
 const MAPBOX_KEY = process.env.NEXT_PUBLIC_MAPBOX_KEY as string;
 
 type MapboxProps = {
+  mapStyle: string;
   initial: Coordinates;
   zoomLevel: number;
   mapItems: MapItem[];
 };
 
-export function Mapbox({ initial, zoomLevel, mapItems }: MapboxProps) {
+export function Mapbox({ mapStyle, initial, zoomLevel, mapItems }: MapboxProps) {
   const mapRef = useRef<MapRef>(null);
   const { isPopupOpen, marker, setPopup, closePopup } = useMapbox();
 
@@ -63,7 +64,7 @@ export function Mapbox({ initial, zoomLevel, mapItems }: MapboxProps) {
         longitude: initial.longitude,
         zoom: zoomLevel,
       }}
-      mapStyle="mapbox://styles/mapbox/dark-v9"
+      mapStyle={mapStyle}
       mapboxAccessToken={MAPBOX_KEY}
       style={{ height: '30rem', borderRadius: '0.25rem', overflow: 'hidden' }}>
       {pins}

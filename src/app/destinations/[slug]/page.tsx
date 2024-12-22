@@ -8,6 +8,17 @@ import { Text } from '@/app/components/ui/Text';
 type RequiredParams = { slug: string };
 type PageProps = { params: Promise<RequiredParams> };
 
+const mapStyles = [
+  'mapbox://styles/mapbox/streets-v12',
+  'mapbox://styles/mapbox/outdoors-v12',
+  'mapbox://styles/mapbox/light-v11',
+  'mapbox://styles/mapbox/dark-v11',
+  'mapbox://styles/mapbox/satellite-v9',
+  'mapbox://styles/mapbox/satellite-streets-v12',
+  'mapbox://styles/mapbox/navigation-day-v1',
+  'mapbox://styles/mapbox/navigation-night-v1',
+];
+
 export async function generateStaticParams(): Promise<RequiredParams[]> {
   const destinations = await cms.getDestinations();
   const slugs = destinations.map((destination) => destination.slug);
@@ -36,11 +47,15 @@ export default async function DestinationPage({ params }: PageProps) {
         </div>
       </Responsive>
       <PopularAttractions mapItems={destination.mapitems} />
-      <InteractiveMap
-        zoomLevel={destination.zoomlevel}
-        viewport={destination.viewport}
-        mapItems={destination.mapitems}
-      />
+      {mapStyles.map((style) => (
+        <InteractiveMap
+          key={style}
+          mapStyle={style}
+          zoomLevel={destination.zoomlevel}
+          viewport={destination.viewport}
+          mapItems={destination.mapitems}
+        />
+      ))}
     </>
   );
 }
