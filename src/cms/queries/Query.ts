@@ -102,4 +102,18 @@ export class Query {
       }
     `;
   }
+
+  static getPageImage() {
+    return gql`
+      query getPageImage($page: String!) {
+        pageImage(where: { page: $page }) {
+          id
+          page
+          image {
+            url
+          }
+        }
+      }
+    `;
+  }
 }

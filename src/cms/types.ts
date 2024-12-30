@@ -54,3 +54,8 @@ export type SlideshowImage = {
   order: number;
   isDarkImage: boolean;
 };
+
+export type PageImage = {
+  name: string;
+  image: CMSImage;
+};
