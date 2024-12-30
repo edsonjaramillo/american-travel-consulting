@@ -1,8 +1,7 @@
 import { type Coordinates, type MapItem } from '@/cms/types';
 import { Mapbox } from '@/components/destinations/Mapbox';
 import { Section } from '@/components/ui/Section';
-
-import { Text } from '../ui/Text';
+import { Text } from '@/components/ui/Text';
 
 type InteractiveMapProps = {
   mapStyle: string;
