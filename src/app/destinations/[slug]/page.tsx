@@ -1,9 +1,9 @@
-import { cms } from '@/app/cms/clients/CMSClient';
-import { Gallery } from '@/app/components/destinations/Gallery';
-import { InteractiveMap } from '@/app/components/destinations/InteractiveMap';
-import { PopularAttractions } from '@/app/components/destinations/PopularDestinations';
-import { Responsive } from '@/app/components/ui/Responsive';
-import { Text } from '@/app/components/ui/Text';
+import { cms } from '@/cms/clients/CMSClient';
+import { Gallery } from '@/components/destinations/Gallery';
+import { InteractiveMap } from '@/components/destinations/InteractiveMap';
+import { PopularAttractions } from '@/components/destinations/PopularDestinations';
+import { Responsive } from '@/components/ui/Responsive';
+import { Text } from '@/components/ui/Text';
 
 type RequiredParams = { slug: string };
 type PageProps = { params: Promise<RequiredParams> };

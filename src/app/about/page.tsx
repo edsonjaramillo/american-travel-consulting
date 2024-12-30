@@ -1,5 +1,5 @@
-import { Section } from '@/app/components/ui/Section';
-import { Text } from '@/app/components/ui/Text';
+import { Section } from '@/components/ui/Section';
+import { Text } from '@/components/ui/Text';
 
 export default function AboutPage() {
   return (

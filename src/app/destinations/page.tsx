@@ -1,6 +1,6 @@
-import { cms } from '@/app/cms/clients/CMSClient';
-import { DestinationCard } from '@/app/components/destinations/DestinationCard';
-import { Section } from '@/app/components/ui/Section';
+import { cms } from '@/cms/clients/CMSClient';
+import { DestinationCard } from '@/components/destinations/DestinationCard';
+import { Section } from '@/components/ui/Section';
 
 export default async function DestinationsPage() {
   const destinations = await cms.getDestinations();

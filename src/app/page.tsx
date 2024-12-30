@@ -1,8 +1,8 @@
-import { cms } from '@/app/cms/clients/CMSClient';
-import { CTA } from '@/app/components/home/CTA';
-import { FeaturedDestination } from '@/app/components/home/FeaturedDestination';
-import { Testimonial } from '@/app/components/home/Testimonial';
-import { Section } from '@/app/components/ui/Section';
+import { cms } from '@/cms/clients/CMSClient';
+import { CTA } from '@/components/home/CTA';
+import { FeaturedDestination } from '@/components/home/FeaturedDestination';
+import { Testimonial } from '@/components/home/Testimonial';
+import { Section } from '@/components/ui/Section';
 
 // 1 week in seconds
 export const revalidate = 604800;

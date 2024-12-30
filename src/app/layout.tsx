@@ -2,12 +2,12 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 
-import { DesktopNavigation, NavigationSpacer } from '@/app/components/navigation/DesktopNavigation';
-import { Footer } from '@/app/components/navigation/Footer';
-import { MobileNavigation } from '@/app/components/navigation/MobileNavigation';
-import { Toast } from '@/app/components/ui/Toast';
 import '@/app/globals.css';
-import { cn } from '@/app/lib/ui/tw';
+import { DesktopNavigation, NavigationSpacer } from '@/components/navigation/DesktopNavigation';
+import { Footer } from '@/components/navigation/Footer';
+import { MobileNavigation } from '@/components/navigation/MobileNavigation';
+import { Toast } from '@/components/ui/Toast';
+import { cn } from '@/lib/ui/tw';
 
 const inter = Inter({
   subsets: ['latin'],

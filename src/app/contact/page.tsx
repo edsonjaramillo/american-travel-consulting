@@ -1,5 +1,5 @@
-import { ContactForm } from '@/app/components/forms/ContactForm';
-import { SplitShell } from '@/app/components/ui/SplitShell';
+import { ContactForm } from '@/components/forms/ContactForm';
+import { SplitShell } from '@/components/ui/SplitShell';
 
 export default function ContactPage() {
   return (

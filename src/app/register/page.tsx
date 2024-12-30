@@ -1,5 +1,5 @@
-import { RegisterForm } from '@/app/components/forms/RegisterForm';
-import { SplitShell } from '@/app/components/ui/SplitShell';
+import { RegisterForm } from '@/components/forms/RegisterForm';
+import { SplitShell } from '@/components/ui/SplitShell';
 
 export default function ContactPage() {
   return (
