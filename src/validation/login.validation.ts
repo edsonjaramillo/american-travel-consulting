@@ -2,6 +2,6 @@ import z from 'zod';
 
 import { zString } from '@/validation/core.validation';
 
-export const zRegisterFormSchema = z.object({
+export const zLoginFormSchema = z.object({
   tripCode: zString,
 });

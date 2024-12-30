@@ -3,18 +3,18 @@ import Link from 'next/link';
 import { buttonVariants } from '@/components/ui/Button';
 import { Text } from '@/components/ui/Text';
 
-export function Register() {
+export function Login() {
   return (
-    <Link className={buttonVariants()} href="/register">
-      <RegisterIcon />
+    <Link className={buttonVariants()} href="/login">
+      <LoginIcon />
       <Text as="span" size="small">
-        Register
+        Login
       </Text>
     </Link>
   );
 }
 
-function RegisterIcon() {
+function LoginIcon() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

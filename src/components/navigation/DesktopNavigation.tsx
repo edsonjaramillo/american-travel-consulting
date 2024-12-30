@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 import { Logo } from '@/components/common/Logo';
-import { Register } from '@/components/navigation/Register';
+import { Login } from '@/components/navigation/Login';
 import { Responsive } from '@/components/ui/Responsive';
 import { Text } from '@/components/ui/Text';
 import { type NavigationLink, navigationLinks } from '@/data/links';
@@ -16,7 +16,7 @@ export function DesktopNavigation() {
             <DesktopLink key={link.href} link={link} />
           ))}
         </ul>
-        <Register />
+        <Login />
       </Responsive>
     </nav>
   );

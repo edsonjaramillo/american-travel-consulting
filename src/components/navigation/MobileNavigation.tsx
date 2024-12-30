@@ -1,8 +1,8 @@
 'use client';
 
 import { Logo } from '@/components/common/Logo';
+import { Login } from '@/components/navigation/Login';
 import { MobileMenu } from '@/components/navigation/MobileMenu';
-import { Register } from '@/components/navigation/Register';
 import { Responsive } from '@/components/ui/Responsive';
 import { useMobileMenu } from '@/context/MobileMenuContext';
 
@@ -14,7 +14,7 @@ export function MobileNavigation() {
       <Responsive className="flex items-center justify-between">
         <Hamburger />
         <Logo />
-        <Register />
+        <Login />
         <MobileMenu />
       </Responsive>
     </nav>
