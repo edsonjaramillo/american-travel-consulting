@@ -78,7 +78,7 @@ export default {
       base: ['1rem', { lineHeight: '1.5' }],
       small: ['.875rem', { lineHeight: '1.5' }],
     },
-    transitionDuration: { base: '350ms' },
+    transitionDuration: { base: '350ms', slideshow: '1000ms' },
     extend: {
       zIndex: {
         modal: '4',

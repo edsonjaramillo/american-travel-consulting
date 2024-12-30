@@ -1,6 +1,22 @@
 import { gql } from 'graphql-request';
 
 export class Query {
+  static getSlideshowItems() {
+    return gql`
+      query getSlideshowImages {
+        slideshowItems(orderBy: order_ASC) {
+          id
+          image {
+            id
+            url
+          }
+          order
+          isDarkImage
+        }
+      }
+    `;
+  }
+
   static getDestination() {
     return gql`
       query getDestination($slug: String!) {

@@ -1,4 +1,4 @@
-import type { Destination, Testimonial } from '@/cms/types';
+import type { Destination, SlideshowImage, Testimonial } from '@/cms/types';
 
 import { GQLRequest, gqlClient } from '@/cms/clients/GQLRequest';
 import { Query } from '@/cms/queries/Query';
@@ -14,13 +14,12 @@ class CMSClient {
     this.gql = gqlClient;
   }
 
-  //   async getCTA() {
-  //     const id = 'clkoi4o1y1nb20bipwng0hxic';
-  //     const { callToAction } = await this.gql.request<Res<CTA>>(Query.getCTA(), {
-  //       variables: { id },
-  //     });
-  //     return callToAction;
-  //   }
+  async getSlideshowImages() {
+    const { slideshowItems } = await this.gql.request<Res<SlideshowImage[]>>(
+      Query.getSlideshowItems(),
+    );
+    return slideshowItems;
+  }
 
   async getDestination(slug: string) {
     const { destination } = await this.gql.request<Res<Destination>>(Query.getDestination(), {

@@ -48,3 +48,9 @@ export type CMSImage = {
   width: number;
   height: number;
 };
+
+export type SlideshowImage = {
+  image: CMSImage;
+  order: number;
+  isDarkImage: boolean;
+};
