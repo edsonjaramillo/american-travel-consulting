@@ -4,6 +4,8 @@ import { Responsive } from '@/components/ui/Responsive';
 import { type As, Text } from '@/components/ui/Text';
 import { cn } from '@/lib/ui/tw';
 
+import { UnderlinePlane } from '../common/UnderlinePlane';
+
 export const sectionVariants = tv({
   base: 'scroll-mt-12 py-16',
   variants: { background: { standard: 'bg-grayscale-50' } },
@@ -33,9 +35,12 @@ export function Section({
     <section id={id} className={sectionClass} {...props}>
       <Responsive>
         <div className="space-y-3 text-balance pb-12 text-center">
-          <Text as={headerAs} size="4xl" className="font-bold">
-            {headerText}
-          </Text>
+          <div className="relative mx-auto w-fit">
+            <Text as={headerAs} size="4xl" className="font-bold">
+              {headerText}
+            </Text>
+            <UnderlinePlane />
+          </div>
           {subheaderText && (
             <Text as="p" color="neutral" className="mx-auto w-[min(_90%,37rem)] font-normal">
               {subheaderText}
