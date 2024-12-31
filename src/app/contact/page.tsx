@@ -1,6 +1,16 @@
+import { type Metadata } from 'next';
+
 import { cms } from '@/cms/clients/CMSClient';
 import { ContactForm } from '@/components/forms/ContactForm';
 import { SplitShell } from '@/components/ui/SplitShell';
+import { baseOpenGraph } from '@/lib/opengraph';
+
+export async function generateMetadata(): Promise<Metadata> {
+  return baseOpenGraph({
+    title: 'Contact Us',
+    description: 'Contact us for any questions, inquiries, or to get a quote.',
+  });
+}
 
 export default async function ContactPage() {
   const pageImage = await cms.getPageImage('contact');

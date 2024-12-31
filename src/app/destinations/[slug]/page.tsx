@@ -1,12 +1,37 @@
+import { type Metadata } from 'next';
+
 import { cms } from '@/cms/clients/CMSClient';
 import { Gallery } from '@/components/destinations/Gallery';
 import { InteractiveMap } from '@/components/destinations/InteractiveMap';
 import { PopularAttractions } from '@/components/destinations/PopularDestinations';
 import { Responsive } from '@/components/ui/Responsive';
 import { Text } from '@/components/ui/Text';
+import { baseOpenGraph } from '@/lib/opengraph';
 
 type RequiredParams = { slug: string };
 type PageProps = { params: Promise<RequiredParams> };
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const destination = await cms.getDestination(slug);
+
+  return baseOpenGraph({
+    title: destination.name,
+    description: destination.description,
+    openGraph: {
+      type: 'website',
+      title: destination.name,
+      description: destination.description,
+      siteName: 'American Travel Consulting',
+      url: `https://americantravelconsulting.com/destinations/${slug}`,
+      images: {
+        url: destination.main.url,
+        width: destination.main.width,
+        height: destination.main.height,
+      },
+    },
+  });
+}
 
 export async function generateStaticParams(): Promise<RequiredParams[]> {
   const destinations = await cms.getDestinations();

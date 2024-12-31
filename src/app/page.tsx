@@ -1,8 +1,22 @@
+import { type Metadata } from 'next';
+
 import { cms } from '@/cms/clients/CMSClient';
 import { CTA } from '@/components/home/CTA';
 import { FeaturedDestination } from '@/components/home/FeaturedDestination';
 import { Testimonial } from '@/components/home/Testimonial';
 import { Section } from '@/components/ui/Section';
+
+export const metadata: Metadata = {
+  title: 'American Travel Consulting',
+  description:
+    'Specializing in student group travel, American Travel Consulting can customize the perfect trip for your group.',
+  openGraph: {
+    type: 'website',
+    url: 'https://americantravelconsulting.com',
+    images: 'https://media.graphassets.com/sN1eSMNqT0Osthg3g3xz',
+  },
+  creator: 'Edson Jaramillo',
+};
 
 // 1 week in seconds
 export const revalidate = 604800;

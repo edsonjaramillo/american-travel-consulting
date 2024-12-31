@@ -1,5 +1,16 @@
+import { type Metadata } from 'next';
+
 import { Section } from '@/components/ui/Section';
 import { Text } from '@/components/ui/Text';
+import { baseOpenGraph } from '@/lib/opengraph';
+
+export async function generateMetadata(): Promise<Metadata> {
+  return baseOpenGraph({
+    title: 'About Us',
+    description:
+      'Meet our team of experts who are passionate about helping you plan and excecute your group trip.',
+  });
+}
 
 export default function AboutPage() {
   return (

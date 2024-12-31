@@ -27,6 +27,8 @@ export class Query {
           description
           main {
             url
+            width
+            height
           }
           secondimage {
             url
