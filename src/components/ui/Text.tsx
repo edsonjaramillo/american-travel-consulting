@@ -23,6 +23,7 @@ export const textVariants = tv({
       neutral: 'text-grayscale-neutral',
       inverse: 'text-grayscale-inverse',
       primary: 'text-primary',
+      secondary: 'text-secondary',
     },
     underline: { true: 'underline underline-offset-4' },
     defaultVariants: { size: 'base', color: 'standard' },
