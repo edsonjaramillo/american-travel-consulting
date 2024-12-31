@@ -30,7 +30,7 @@ function DesktopLink({ link }: DesktopLinksProps) {
         href={link.href}
         prefetch={link.prefetch}
         className="font-medium text-tertiary-dark transition-colors duration-base hover:text-secondary">
-        <Text as="span" size="small">
+        <Text as="span" size="base">
           {link.name}
         </Text>
       </Link>
