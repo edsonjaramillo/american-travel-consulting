@@ -13,7 +13,7 @@ export function SplitShell({ image, form, children, className, ...props }: Split
     <div className="flex flex-col-reverse md:grid md:grid-cols-2" {...props}>
       <div
         className={cn(
-          'mx-auto w-responsive md:ml-auto md:mr-0 md:w-half-responsive [&>div]:md:px-16',
+          'mx-auto w-responsive md:w-half-responsive lg:mx-0 lg:ml-auto [&>div]:md:px-6',
           className,
         )}>
         {form}
