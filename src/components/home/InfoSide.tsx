@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 
+import { SlideshowTextColor } from '@/cms/types';
 import { buttonVariants } from '@/components/ui/Button';
 import { Text } from '@/components/ui/Text';
 import { useSlideshow } from '@/context/SlideshowContext';
@@ -9,8 +10,9 @@ import { cn } from '@/lib/ui/tw';
 
 export function InfoSide() {
   const { currentImage } = useSlideshow();
+  if (!currentImage) return null;
 
-  const needsWhiteText = currentImage?.isDarkImage;
+  const textColor = textColorSelector(currentImage.textColor);
 
   const quoteLinkCls = cn(buttonVariants(), 'mr-auto w-fit');
   return (
@@ -18,13 +20,13 @@ export function InfoSide() {
       <Text
         as="h1"
         size="cta"
-        color={needsWhiteText ? 'inverse' : 'standard'}
+        color={textColor}
         className="text-5xl font-bold transition-colors duration-slideshow">
         Always Travel Confidently
       </Text>
       <Text
         as="p"
-        color={needsWhiteText ? 'inverse' : 'standard'}
+        color={textColor}
         size="subheader"
         className="text-pretty text-2xl font-medium transition-colors duration-slideshow">
         Enjoy your next group trip from start to finish without a worry in the world.
@@ -34,4 +36,15 @@ export function InfoSide() {
       </Link>
     </div>
   );
+}
+
+function textColorSelector(color: SlideshowTextColor) {
+  switch (color) {
+    case 'white':
+      return 'inverse';
+    case 'red':
+      return 'standard';
+    case 'blue':
+      return 'standard';
+  }
 }

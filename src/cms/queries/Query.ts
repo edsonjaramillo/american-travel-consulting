@@ -11,7 +11,8 @@ export class Query {
             url
           }
           order
-          isDarkImage
+          textColor
+          logoColor
         }
       }
     `;

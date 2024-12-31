@@ -49,10 +49,14 @@ export type CMSImage = {
   height: number;
 };
 
+export type SlideshowTextColor = 'white' | 'red' | 'blue';
+export type SlideshowLogoColor = 'white' | 'blue';
+
 export type SlideshowImage = {
   image: CMSImage;
   order: number;
-  isDarkImage: boolean;
+  textColor: SlideshowTextColor;
+  logoColor: SlideshowLogoColor;
 };
 
 export type PageImage = {
