@@ -19,7 +19,11 @@ export function SplitShell({ image, form, children, className, ...props }: Split
         {form}
       </div>
       <div className="relative h-[25rem] md:h-auto md:min-h-[45rem]">
-        <Image className={cn('h-full w-full object-cover', imgClassNames)} fill {...imgProps} />
+        <Image
+          className={cn('h-full w-full object-cover object-left', imgClassNames)}
+          fill
+          {...imgProps}
+        />
         {children}
       </div>
     </div>
