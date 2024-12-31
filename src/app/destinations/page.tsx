@@ -3,6 +3,10 @@ import { DestinationCard } from '@/components/destinations/DestinationCard';
 import { Section } from '@/components/ui/Section';
 
 export default async function DestinationsPage() {
+  return <Destinations />;
+}
+
+async function Destinations() {
   const destinations = await cms.getDestinations();
   return (
     <Section headerAs="h1" headerText="Destinations" id="destinations">
