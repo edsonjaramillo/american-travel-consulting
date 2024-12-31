@@ -28,6 +28,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         url: destination.main.url,
         width: destination.main.width,
         height: destination.main.height,
+        alt: destination.name,
       },
     },
   });
