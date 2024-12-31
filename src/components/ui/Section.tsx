@@ -32,7 +32,7 @@ export function Section({
 }: SectionProps) {
   const sectionClass = cn(sectionVariants({ background }), className);
   return (
-    <section id={id} className={sectionClass} {...props}>
+    <section id={id} className={sectionClass} {...props} aria-labelledby={id}>
       <Responsive>
         <div className="space-y-3 text-balance pb-12 text-center">
           <div className="relative mx-auto w-fit">

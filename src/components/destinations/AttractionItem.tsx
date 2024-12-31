@@ -25,6 +25,7 @@ export function AttractionItem({ mapItem }: AttractionItemProps) {
   return (
     <button
       type="button"
+      aria-label={`View ${mapItem.name} on map`}
       onClick={() => {
         setPopup({
           name: mapItem.name,

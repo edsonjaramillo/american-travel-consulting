@@ -8,7 +8,9 @@ import { type NavigationLink, navigationLinks } from '@/data/links';
 
 export function DesktopNavigation() {
   return (
-    <nav className="fixed top-0 z-nav mb-1 hidden w-full rounded-bl rounded-br bg-grayscale-50 shadow-md md:block">
+    <nav
+      className="fixed top-0 z-nav mb-1 hidden w-full rounded-bl rounded-br bg-grayscale-50 shadow-md md:block"
+      aria-label="Desktop Navigation">
       <Responsive className="flex h-14 items-center justify-between">
         <Logo />
         <ul className="flex space-x-4">

@@ -50,7 +50,7 @@ export function Mapbox({ initial, zoomLevel, mapItems }: MapboxProps) {
             longitude: item.coordinate.longitude,
           });
         }}>
-        <Icon />
+        <MapIcon name={item.name} />
       </Marker>
     ));
   }, [mapItems, setPopup]);
@@ -96,9 +96,12 @@ export function Mapbox({ initial, zoomLevel, mapItems }: MapboxProps) {
   );
 }
 
-function Icon() {
+type MapIconProps = {
+  name: string;
+};
+function MapIcon({ name }: MapIconProps) {
   return (
-    <button type="button">
+    <button type="button" aria-label={`View ${name} on map`}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"

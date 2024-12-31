@@ -15,5 +15,13 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function LoginPage() {
   const pageImage = await cms.getPageImage('login');
-  return <SplitShell image={{ src: pageImage.image.url, alt: 'gfgfgf' }} form={<LoginForm />} />;
+  return (
+    <SplitShell
+      image={{
+        src: pageImage.image.url,
+        alt: 'A collage of group travel photos with the ATC logo on it.',
+      }}
+      form={<LoginForm />}
+    />
+  );
 }

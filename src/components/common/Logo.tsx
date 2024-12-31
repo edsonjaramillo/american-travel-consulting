@@ -27,11 +27,13 @@ const tertiaryStyle: React.CSSProperties = {
 
 export function Logo({ className, ...props }: LogoProps) {
   return (
-    <Link href="/" className={cn('h-6', className)} {...props}>
+    <Link aria-label="Home" href="/" className={cn('h-6', className)} {...props}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 744.97333 347.06668"
         className="h-full"
+        role="img"
+        aria-label="American Travel Consulting Logo"
         xmlSpace="preserve"
         version="1.1">
         <g transform="matrix(1.3333333,0,0,-1.3333333,0,347.06667)">

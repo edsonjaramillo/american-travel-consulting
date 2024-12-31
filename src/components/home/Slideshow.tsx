@@ -27,7 +27,7 @@ export function Slideshow({ images }: SlideshowProps) {
           key={image.image.id}
           i={i}
           url={image.image.url}
-          alt="Orlando, Florida"
+          alt={`Slideshow image ${i + 1}`}
         />
       ))}
     </>

@@ -30,7 +30,7 @@ export function LoginForm() {
   return (
     <div className="py-48">
       <div className="mb-8 space-y-1">
-        <Text as="h2" size="4xl" className="font-bold">
+        <Text as="h1" size="4xl" className="font-bold">
           Login
         </Text>
         <Text as="p" color="neutral">

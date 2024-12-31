@@ -12,6 +12,7 @@ export function DestinationCard({ destination }: DestinationCardProps) {
   return (
     <Link
       href={`/destinations/${destination.slug}`}
+      aria-label={`View ${destination.name}`}
       className="group/destination-card overflow-hidden rounded shadow-md">
       <div className="relative block h-48 overflow-hidden">
         <Image

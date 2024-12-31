@@ -39,7 +39,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <DesktopNavigation />
         <MobileNavigation />
         <NavigationSpacer />
-        {children}
+        <main>{children}</main>
         <Footer />
         <Toast />
       </body>
