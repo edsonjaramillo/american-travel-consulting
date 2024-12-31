@@ -8,7 +8,7 @@ export function Login() {
     <Link className={buttonVariants()} href="/login">
       <LoginIcon />
       <Text as="span" size="small">
-        Login
+        Register/Login
       </Text>
     </Link>
   );
