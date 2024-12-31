@@ -43,8 +43,8 @@ function textColorSelector(color: SlideshowTextColor) {
     case 'white':
       return 'inverse';
     case 'red':
-      return 'standard';
+      return 'secondary';
     case 'blue':
-      return 'standard';
+      return 'primary';
   }
 }
