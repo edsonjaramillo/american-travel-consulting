@@ -34,9 +34,7 @@ export function Slideshow({ images }: SlideshowProps) {
   );
 }
 
-const base = cn(
-  'h-full w-full bg-primary object-cover object-center transition-opacity duration-slideshow',
-);
+const base = cn('h-full w-full object-cover object-center transition-opacity duration-slideshow');
 const isHidden = cn('opacity-0');
 const isVisible = cn('opacity-100');
 
@@ -49,5 +47,5 @@ type SlideShowImageProps = {
 function SlideshowImageItem({ i, url, alt }: SlideShowImageProps) {
   const { index } = useSlideshow();
   const cls = cn(base, index === i ? isVisible : isHidden);
-  return <Image src={url} alt={alt} fill className={cls} />;
+  return <Image src={url} alt={alt} fill className={cls} priority={i === 0} />;
 }
