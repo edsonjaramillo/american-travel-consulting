@@ -12,7 +12,7 @@ export class GQLRequest {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ query, variables }),
-      cache: 'no-cache',
+      cache: 'force-cache',
     });
     const json = await response.json();
     return json.data as T;

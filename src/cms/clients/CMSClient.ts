@@ -36,7 +36,6 @@ class CMSClient {
   async getFeaturedestinations() {
     const { destinations } = await this.gql.request<Res<Destination[]>>(
       Query.getFeaturedestinations(),
-      { cache: 'force-cache' },
     );
     return destinations;
   }
