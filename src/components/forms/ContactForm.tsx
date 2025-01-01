@@ -16,9 +16,21 @@ import { zContactFormSchema } from '@/validation/contact.validation';
 const toastId = 'contact-form-toast';
 type FormSchema = z.infer<typeof zContactFormSchema>;
 
-async function onSubmit() {
-  // async function onSubmit(_: FormSchema) {
-  toast.info('Sending message...', { id: toastId });
+async function onSubmit(data: FormSchema) {
+  toast.loading('Sending message...', { id: toastId, duration: Infinity });
+
+  const response = await fetch('/api/contact', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data),
+  });
+
+  if (!response.ok) {
+    console.error('Error sending email:', response.statusText);
+    return toast.error('Error sending email.', { id: toastId });
+  }
+
+  console.log('Message sent!');
   toast.success('Message sent!', { id: toastId });
 }
 
@@ -51,27 +63,48 @@ export function ContactForm() {
         <Form onSubmit={handleSubmit(onSubmit, onInvalid)}>
           <InputGroup>
             <Label field="name">Name</Label>
-            <Input field="name" type="text" autoComplete="name" required />
+            <Input field="name" type="text" autoComplete="name" required defaultValue="Chris" />
           </InputGroup>
           <InputGroup>
             <Label field="organization">Organization</Label>
-            <Input field="organization" type="text" required />
+            <Input
+              field="organization"
+              type="text"
+              required
+              defaultValue="American Travel Consulting"
+            />
           </InputGroup>
           <InputGroup>
             <Label field="destination">Destination</Label>
-            <Input field="destination" type="text" required />
+            <Input field="destination" type="text" required defaultValue="Guntersville, AL" />
           </InputGroup>
           <InputGroup>
             <Label field="email">Email</Label>
-            <Input field="email" type="email" autoComplete="email" required />
+            <Input
+              field="email"
+              type="email"
+              autoComplete="email"
+              required
+              defaultValue="hello@atc.com"
+            />
           </InputGroup>
           <InputGroup>
             <Label field="phoneNumber">Phone Number</Label>
-            <Input field="phoneNumber" type="tel" autoComplete="tel" required />
+            <Input
+              field="phoneNumber"
+              type="tel"
+              autoComplete="tel"
+              required
+              defaultValue="2565720669"
+            />
           </InputGroup>
           <InputGroup>
             <Label field="message">Message</Label>
-            <Textarea field="message" required />
+            <Textarea
+              field="message"
+              required
+              defaultValue="I would like to book a trip to Guntersville, AL."
+            />
           </InputGroup>
           <Button type="submit" className="ml-auto" disabled={isSubmitting}>
             {isSubmitting ? 'Sending...' : 'Send Message'}
@@ -129,7 +162,7 @@ const textCls = cn(
 
 function ContactItem({ icon, href, children, ...props }: ContactItemProps) {
   return (
-    <div className="group/contact-item line-clamp-1 flex items-center gap-2" {...props}>
+    <div className="group/contact-item line-clamp-1 flex w-fit items-center gap-2" {...props}>
       {icon}
       <a href={href} className={textCls}>
         {children}

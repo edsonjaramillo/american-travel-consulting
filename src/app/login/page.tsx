@@ -20,6 +20,7 @@ export default async function LoginPage() {
       image={{
         src: pageImage.image.url,
         alt: 'A collage of group travel photos with the ATC logo on it.',
+        priority: true,
       }}
       form={<LoginForm />}
     />
