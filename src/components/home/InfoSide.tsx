@@ -13,22 +13,21 @@ export function InfoSide() {
   if (!currentImage) return null;
 
   const textColor = textColorSelector(currentImage.textColor);
-
-  const quoteLinkCls = cn(buttonVariants(), 'mr-auto w-fit');
+  const quoteLinkCls = cn(buttonVariants(), 'mx-auto w-fit md:mx-0 md:mr-auto');
   return (
     <div className="flex flex-col justify-center gap-4">
       <Text
         as="h1"
         size="cta"
         color={textColor}
-        className="text-5xl font-bold transition-colors duration-slideshow">
+        className="text-center text-5xl font-bold transition-colors duration-slideshow md:text-left">
         Always Travel Confidently
       </Text>
       <Text
         as="p"
         color={textColor}
         size="subheader"
-        className="text-pretty text-2xl font-medium transition-colors duration-slideshow">
+        className="text-pretty text-center text-2xl font-medium transition-colors duration-slideshow md:text-left">
         Enjoy your next group trip from start to finish without a worry in the world.
       </Text>
       <Link href="/contact" className={quoteLinkCls}>
