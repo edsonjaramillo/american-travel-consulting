@@ -1,5 +1,7 @@
 import { type Metadata } from 'next';
 
+import { cms } from '@/cms/clients/CMSClient';
+import { EmployeeCard } from '@/components/about/EmployeeCard';
 import { Section } from '@/components/ui/Section';
 import { Text } from '@/components/ui/Text';
 import { baseOpenGraph } from '@/lib/opengraph';
@@ -65,10 +67,18 @@ function AboutUs() {
   );
 }
 
-function MeetTheTeam() {
+async function MeetTheTeam() {
+  const employees = await cms.getEmployees();
+
   return (
     <>
-      <Section id="meet-the-team" headerAs="h2" headerText="Meet the Team"></Section>
+      <Section id="meet-the-team" headerAs="h2" headerText="Meet the Team">
+        <div className="mx-auto flex max-w-[70ch] flex-col justify-center gap-8">
+          {employees.map((employee) => (
+            <EmployeeCard key={employee.id} employee={employee} />
+          ))}
+        </div>
+      </Section>
     </>
   );
 }

@@ -1,4 +1,4 @@
-import type { Destination, PageImage, SlideshowImage, Testimonial } from '@/cms/types';
+import type { Destination, Employee, PageImage, SlideshowImage, Testimonial } from '@/cms/types';
 
 import { GQLRequest, gqlClient } from '@/cms/clients/GQLRequest';
 import { Query } from '@/cms/queries/Query';
@@ -44,6 +44,11 @@ class CMSClient {
   async getTestimonials() {
     const { testimonials } = await this.gql.request<Res<Testimonial[]>>(Query.getTestimonials());
     return testimonials;
+  }
+
+  async getEmployees() {
+    const { employees } = await this.gql.request<Res<Employee[]>>(Query.getEmployees());
+    return employees;
   }
 
   async getPageImage(page: string) {

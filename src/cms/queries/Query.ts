@@ -106,6 +106,20 @@ export class Query {
     `;
   }
 
+  static getEmployees() {
+    return gql`
+      query getEmployees {
+        employees {
+          id
+          name
+          biography
+          quote
+          email
+        }
+      }
+    `;
+  }
+
   static getPageImage() {
     return gql`
       query getPageImage($page: String!) {

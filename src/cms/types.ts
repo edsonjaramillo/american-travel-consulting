@@ -27,6 +27,7 @@ export type Coordinates = {
 };
 
 export type Employee = {
+  id: string;
   name: string;
   biography: string;
   quote: string;
