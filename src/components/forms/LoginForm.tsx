@@ -31,7 +31,7 @@ export function LoginForm() {
     <div className="py-48">
       <div className="mb-8 space-y-1">
         <Text as="h1" size="4xl" className="font-bold">
-          Login
+          Register/Login
         </Text>
         <Text as="p" color="neutral">
           Enter your trip code below and you will be transfered to your GroupCollect payment page.
