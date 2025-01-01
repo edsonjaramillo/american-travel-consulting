@@ -21,6 +21,7 @@ export function Toast() {
           error: errorToast,
           info: infoToast,
           success: successToast,
+          loading: infoToast,
           warning: warningToast,
         },
       }}
