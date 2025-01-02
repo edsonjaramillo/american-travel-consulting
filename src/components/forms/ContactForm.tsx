@@ -63,48 +63,27 @@ export function ContactForm() {
         <Form onSubmit={handleSubmit(onSubmit, onInvalid)}>
           <InputGroup>
             <Label field="name">Name</Label>
-            <Input field="name" type="text" autoComplete="name" required defaultValue="Chris" />
+            <Input field="name" type="text" autoComplete="name" required />
           </InputGroup>
           <InputGroup>
             <Label field="organization">Organization</Label>
-            <Input
-              field="organization"
-              type="text"
-              required
-              defaultValue="American Travel Consulting"
-            />
+            <Input field="organization" type="text" required />
           </InputGroup>
           <InputGroup>
             <Label field="destination">Destination</Label>
-            <Input field="destination" type="text" required defaultValue="Guntersville, AL" />
+            <Input field="destination" type="text" required />
           </InputGroup>
           <InputGroup>
             <Label field="email">Email</Label>
-            <Input
-              field="email"
-              type="email"
-              autoComplete="email"
-              required
-              defaultValue="hello@atc.com"
-            />
+            <Input field="email" type="email" autoComplete="email" required />
           </InputGroup>
           <InputGroup>
             <Label field="phoneNumber">Phone Number</Label>
-            <Input
-              field="phoneNumber"
-              type="tel"
-              autoComplete="tel"
-              required
-              defaultValue="2565720669"
-            />
+            <Input field="phoneNumber" type="tel" autoComplete="tel" required />
           </InputGroup>
           <InputGroup>
             <Label field="message">Message</Label>
-            <Textarea
-              field="message"
-              required
-              defaultValue="I would like to book a trip to Guntersville, AL."
-            />
+            <Textarea field="message" required />
           </InputGroup>
           <Button type="submit" className="ml-auto" disabled={isSubmitting}>
             {isSubmitting ? 'Sending...' : 'Send Message'}
