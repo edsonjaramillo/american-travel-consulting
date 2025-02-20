@@ -1,5 +1,3 @@
-import Image from 'next/image';
-
 import { Responsive } from '@/components/ui/Responsive';
 import { Text } from '@/components/ui/Text';
 
