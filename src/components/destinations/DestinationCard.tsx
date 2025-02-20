@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import Link from 'next/link';
 
 import { type Destination } from '@/cms/types';
@@ -15,11 +14,11 @@ export function DestinationCard({ destination }: DestinationCardProps) {
       aria-label={`View ${destination.name}`}
       className="group/destination-card overflow-hidden rounded shadow-md">
       <div className="relative block h-48 overflow-hidden">
-        <Image
-          className="object-cover duration-base group-hover/destination-card:scale-110"
+        <img
           src={destination.main.url}
+          className="absolute bottom-0 left-0 right-0 top-0 h-full w-full object-cover duration-base group-hover/destination-card:scale-110"
           alt={destination.name}
-          fill
+          loading="lazy"
         />
       </div>
       <div className="flex flex-col gap-2 p-4">

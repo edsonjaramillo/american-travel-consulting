@@ -1,5 +1,3 @@
-import Image from 'next/image';
-
 import { CMSImage } from '@/cms/types';
 
 type GalleryProps = {
@@ -27,7 +25,11 @@ type GalleryImagProps = {
 function GalleryImage({ image }: GalleryImagProps) {
   return (
     <div className="relative h-64 overflow-hidden rounded">
-      <Image src={image.url} className="object-cover" alt="" fill />
+      <img
+        src={image.url}
+        className="absolute bottom-0 left-0 right-0 top-0 h-full w-full object-cover"
+        alt=""
+      />
     </div>
   );
 }

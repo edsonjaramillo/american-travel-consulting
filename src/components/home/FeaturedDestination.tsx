@@ -10,14 +10,16 @@ type DestinationProps = {
   destination: Destination;
 };
 
+// position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent
+
 export function FeaturedDestination({ destination }: DestinationProps) {
   return (
     <div className="group/featured-destination relative h-64 overflow-hidden rounded p-4">
-      <Image
+      <img
         src={destination.main.url}
-        className="object-cover duration-base group-hover/featured-destination:scale-110"
-        fill
+        className="absolute bottom-0 left-0 right-0 top-0 h-full w-full object-cover duration-base group-hover/featured-destination:scale-110"
         alt={destination.name}
+        loading="lazy"
       />
       <Text as="h3" className="absolute font-semibold" color="inverse" size="xl">
         {destination.name}

@@ -1,10 +1,8 @@
-import Image, { type ImageProps } from 'next/image';
-
 import { cn } from '@/lib/ui/tw';
 
 type SplitShellProps = React.ComponentProps<'div'> & {
   form: React.ReactNode;
-  image: ImageProps;
+  image: React.ComponentProps<'img'>;
 };
 
 export function SplitShell({ image, form, children, className, ...props }: SplitShellProps) {
@@ -19,9 +17,11 @@ export function SplitShell({ image, form, children, className, ...props }: Split
         {form}
       </div>
       <div className="relative h-[25rem] md:h-auto md:min-h-[45rem]">
-        <Image
-          className={cn('h-full w-full object-cover object-left', imgClassNames)}
-          fill
+        <img
+          className={cn(
+            'absolute bottom-0 left-0 right-0 top-0 h-full w-full object-cover object-left',
+            imgClassNames,
+          )}
           {...imgProps}
         />
         {children}

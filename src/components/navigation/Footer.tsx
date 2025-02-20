@@ -86,12 +86,13 @@ function SYTALogo() {
   const height = 64;
   const ratio = width / height;
   return (
-    <Image
+    <img
+      className="h-8"
       src="/syta.png"
       alt="SYTA Logo"
       width={width}
       height={height}
-      style={{ width: 'auto', height: 'auto', aspectRatio: `${ratio}` }}
+      style={{ width: 'auto', aspectRatio: `${ratio}` }}
     />
   );
 }
