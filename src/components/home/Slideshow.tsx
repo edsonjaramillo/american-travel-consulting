@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import { useEffect } from 'react';
 
 import { SlideshowImage } from '@/cms/types';
@@ -34,7 +33,9 @@ export function Slideshow({ images }: SlideshowProps) {
   );
 }
 
-const base = cn('h-full w-full object-cover object-center transition-opacity duration-slideshow');
+const base = cn(
+  'absolute bottom-0 left-0 right-0 top-0 h-full w-full object-cover object-center transition-opacity duration-slideshow',
+);
 const isHidden = cn('opacity-0');
 const isVisible = cn('opacity-100');
 
@@ -47,5 +48,5 @@ type SlideShowImageProps = {
 function SlideshowImageItem({ i, url, alt }: SlideShowImageProps) {
   const { index } = useSlideshow();
   const cls = cn(base, index === i ? isVisible : isHidden);
-  return <Image src={url} alt={alt} fill className={cls} priority={i === 0} />;
+  return <img src={url} alt={alt} className={cls} loading={i === 0 ? 'eager' : 'lazy'} />;
 }
